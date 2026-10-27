@@ -48,7 +48,14 @@ Z_dot = Z.'; %Non-conjugate transpose of matrix Z using dot-operator syntax (swa
 disp("Z.':");
 disp(Z_dot);
 ```
+### 1. Function Syntax Transpose (`transpose()`)
+**Purpose:** This function executes a standard non-conjugate transpose on a matrix. Calling `transpose(R)` or `transpose(Z)` reorders the matrix entries by interchanging row and column indices without altering any numerical values or modifying complex components.
 
+### 2. Complex-Conjugate Transpose Operator (`'`)
+**Purpose:** This operator performs a Hermitian (complex-conjugate) transpose. Calling `R'` or `Z'` swaps the rows and columns and simultaneously negates the imaginary component of every complex entry. For real matrix `R`, it produces results identical to a non-conjugate transpose because real numbers have no imaginary parts to conjugate.
+
+### 3. Dot-Operator Transpose (`.'`)
+**Purpose:** This operator executes an explicit non-conjugate transpose using operator syntax. Calling `R.'` or `Z.'` swaps the matrix rows and columns while preserving the exact original real and complex values of every entry.
 
 
 
