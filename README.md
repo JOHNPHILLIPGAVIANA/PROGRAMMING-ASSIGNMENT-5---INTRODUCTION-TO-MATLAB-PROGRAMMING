@@ -105,7 +105,7 @@ disp(norm(x_inv-x_cramer));
 disp('Norm Check: norm(A*x_inv - b):');
 disp(norm(A*x_inv-b));
 ```
-### 1. Matrix Initialization & Linear System Setup (`matrix definition`)
+### 1. Matrix Initialization & Linear System Setup (matrix definition)
 **Purpose:** This defines the coefficient matrix `A` and right-hand side column vector `b` for the system of linear equations. Setting `A = [2 -1 3 2; 1 4 -2 1; 3 2 1 -1; -2 3 4 2]` and `b = [16; -7; 6; 7]` structures the simultaneous equations into matrix-vector form $Ax = b$, preparing the system for solution via MATLAB matrix operations.
 
 ### 2. Matrix Inverse Method (`inv(A) * b`)
