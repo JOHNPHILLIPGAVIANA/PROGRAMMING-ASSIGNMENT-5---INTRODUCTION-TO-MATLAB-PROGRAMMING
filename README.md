@@ -47,6 +47,17 @@ disp(Z_apostrophe);
 Z_dot = Z.'; %Non-conjugate transpose of matrix Z using dot-operator syntax (swaps rows/columns while preserving complex values)
 disp("Z.':");
 disp(Z_dot);
+
+% Answers to the Questions for Problem A
+
+% a. Which operations give identical results for the real matrix R?
+% Answer: All three transpose operations which includes: transpose(R), R', and R.', produces identical results because matrix R contains only real numbers.
+
+% b. Which two operations give identical results for the complex matrix Z?
+% Answer: The two operations that give identical results for complex matrix Z are the transpose(Z) function and the dot-transpose operator Z.'.
+
+% c. Which additional operation is performed by the apostrophe operator ' when the matrix contains complex entries.
+% Answer: The single apostrophe operator (Z') calculates the complex-conjugate transpose. In addition to swapping rows and columns, it negates the imaginary part (complex conjugate) of each element.
 ```
 ### 1. Function Syntax Transpose (`transpose()`)
 **Purpose:** This function executes a standard non-conjugate transpose on a matrix. Calling `transpose(R)` or `transpose(Z)` reorders the matrix entries by interchanging row and column indices without altering any numerical values or modifying complex components.
@@ -56,6 +67,16 @@ disp(Z_dot);
 
 ### 3. Dot-Operator Transpose (`.'`)
 **Purpose:** This operator executes an explicit non-conjugate transpose using operator syntax. Calling `R.'` or `Z.'` swaps the matrix rows and columns while preserving the exact original real and complex values of every entry.
+
+## Answers for the Questions in Problem A
+### A. Which operations give identical results for the real matrix R?
+**Answer:** All three transpose operations which includes: `transpose(R)`, `R'`, and `R.'`, produces identical results because matrix R contains only real numbers.
+
+### B. Which two operations give identical results for the complex matrix Z?
+**Answer:** The two operations that give identical results for complex matrix Z are the `transpose(Z)` function and the dot-transpose operator `Z.'`.
+
+### C. Which additional operation is performed by the apostrophe operator ' when the matrix contains complex entries?
+**Answer:** The single apostrophe operator (`Z'`) calculates the complex-conjugate transpose. In addition to swapping rows and columns, it negates the imaginary part (complex conjugate) of each element.
 
 # B. Two Methods for a Linear System
 ## MATLAB Program and Explanation
