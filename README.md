@@ -133,7 +133,7 @@ disp(norm(A*x_inv-b));
 **Purpose:** This method solves the linear system directly using matrix inversion arithmetic. The expression `x_inv = inv(A) * b` computes the inverse matrix $A^{-1}$ and multiplies it by vector `b` to yield the exact solution vector `x_inv`.
 
 ### 3. Cramer's Rule via While Loop (`det()` & column substitution)
-**Purpose:** This evaluates the linear system using Cramer's Rule through iterative column replacement. The expression `det_A = det(A)` calculates the determinant of matrix `A`, while the `while` loop substitutes vector `b` into each column of `A` sequentially (`A_mod(:, col_idx) = b`) to solve for each variable using `det(A_mod) / det_A`.
+**Purpose:** This evaluates the linear system using Cramer's Rule through iterative column replacement. The expression `det_A = det(A)` calculates the determinant of matrix `A`, while the `while` loop substitutes vector `b` into each column of `A` sequentially (`A_mod(:, col_idx) = b`) to solve for each variable using `det(A_mod) / det_A` and stores the resulting solution in `x_cramer`.
 
 ### 4. Solution Verification & Error Norm Analysis (`norm()`)
 **Purpose:** This displays all calculated solution vectors and checks their mathematical accuracy. Calling `norm(x_inv - x_cramer)` computes the Euclidean distance between the two output vectors to verify equivalence, while `norm(A*x_inv - b)` calculates the residual error norm to ensure the solution satisfies the linear system.
