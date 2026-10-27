@@ -57,8 +57,54 @@ disp(Z_dot);
 ### 3. Dot-Operator Transpose (`.'`)
 **Purpose:** This operator executes an explicit non-conjugate transpose using operator syntax. Calling `R.'` or `Z.'` swaps the matrix rows and columns while preserving the exact original real and complex values of every entry.
 
+# B. Two Methods for a Linear System
+## MATLAB Program and Explanation
+```matlab
+% Problem B: Two Methods for a Linear System
 
+A = [2 -1 3 2; 1 4 -2 1; 3 2 1 -1; -2 3 4 2] %Defines the coefficient matrix A
 
+B = [16; -7; 6; 7] %Defines the right-hand side vector B
+
+%Inverse Method
+
+x_inv = inv(A) * b %Computes x_inv by multiplying the inverse of A by vector b
+
+%Cramer's Rule
+
+det_A = det(A) %Calculates the determinant of the original coefficient matrix A
+
+num_eq = size(b, 1); %Determines the number of equations (rows in vector b) for array size
+x_cramer = zeros(num_eq, 1); 
+
+col_idx = 1; %Initializes the column counter for the while loop
+
+%Loops through each column of matrix A to solve for each variable
+
+while col_idx <= num_eq
+    A_mod = A;
+    A_mod(:, col_idx) = b;
+    x_cramer(col_idx) = det(A_mod) / det_A;
+    col_idx = col_idx + 1;
+end
+
+%Displays the outputs
+
+disp('Solution Vectors for Inverse Method:');
+disp(x_inv);
+
+disp('Solution Vectors for Cramer''s Rule:');
+disp(x_cramer);
+
+disp('Determinant of A:');
+disp(det_A);
+
+disp('Norm Check: norm(x_inv - x_cramer):');
+disp(norm(x_inv-x_cramer));
+
+disp('Norm Check: norm(A*x_inv - b):');
+disp(norm(A*x_inv-b));
+```
 
 
 
