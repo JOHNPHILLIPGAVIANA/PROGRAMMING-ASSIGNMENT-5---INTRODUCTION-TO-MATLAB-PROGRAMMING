@@ -85,7 +85,7 @@ disp(Z_dot);
 
 A = [2 -1 3 2; 1 4 -2 1; 3 2 1 -1; -2 3 4 2] %Defines the coefficient matrix A
 
-B = [16; -7; 6; 7] %Defines the right-hand side vector B
+b = [16; -7; 6; 7] %Defines the right-hand side vector b
 
 %Inverse Method
 
