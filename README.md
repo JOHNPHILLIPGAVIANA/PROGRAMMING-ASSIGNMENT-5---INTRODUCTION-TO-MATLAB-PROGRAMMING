@@ -106,16 +106,16 @@ disp('Norm Check: norm(A*x_inv - b):');
 disp(norm(A*x_inv-b));
 ```
 ### 1. Matrix Initialization & Linear System Setup (`matrix definition`)
-**Purpose:** This section defines the coefficient matrix `A` and right-hand side column vector `b` for the system of linear equations. Setting `A = [2 -1 3 2; 1 4 -2 1; 3 2 1 -1; -2 3 4 2]` and `b = [16; -7; 6; 7]` structures the simultaneous equations into matrix-vector form $Ax = b$, preparing the system for solution via MATLAB matrix operations.
+**Purpose:** This defines the coefficient matrix `A` and right-hand side column vector `b` for the system of linear equations. Setting `A = [2 -1 3 2; 1 4 -2 1; 3 2 1 -1; -2 3 4 2]` and `b = [16; -7; 6; 7]` structures the simultaneous equations into matrix-vector form $Ax = b$, preparing the system for solution via MATLAB matrix operations.
 
 ### 2. Matrix Inverse Method (`inv(A) * b`)
 **Purpose:** This method solves the linear system directly using matrix inversion arithmetic. The expression `x_inv = inv(A) * b` computes the inverse matrix $A^{-1}$ and multiplies it by vector `b` to yield the exact solution vector `x_inv`.
 
 ### 3. Cramer's Rule via While Loop (`det()` & column substitution)
-**Purpose:** This section evaluates the linear system using Cramer's Rule through iterative column replacement. The expression `det_A = det(A)` calculates the determinant of matrix `A`, while the `while` loop substitutes vector `b` into each column of `A` sequentially (`A_mod(:, col_idx) = b`) to solve for each variable using `det(A_mod) / det_A`.
+**Purpose:** This evaluates the linear system using Cramer's Rule through iterative column replacement. The expression `det_A = det(A)` calculates the determinant of matrix `A`, while the `while` loop substitutes vector `b` into each column of `A` sequentially (`A_mod(:, col_idx) = b`) to solve for each variable using `det(A_mod) / det_A`.
 
 ### 4. Solution Verification & Error Norm Analysis (`norm()`)
-**Purpose:** This section displays all calculated solution vectors and checks their mathematical accuracy. Calling `norm(x_inv - x_cramer)` computes the Euclidean distance between the two output vectors to verify equivalence, while `norm(A*x_inv - b)` calculates the residual error norm to ensure the solution satisfies the linear system.
+**Purpose:** This displays all calculated solution vectors and checks their mathematical accuracy. Calling `norm(x_inv - x_cramer)` computes the Euclidean distance between the two output vectors to verify equivalence, while `norm(A*x_inv - b)` calculates the residual error norm to ensure the solution satisfies the linear system.
 
 
 
